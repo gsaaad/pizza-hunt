@@ -67,6 +67,7 @@ const handlePizzaSubmit = (event) => {
         err,
         "There was an error in creating the pizza using the form! Try again"
       );
+      saveRecord(formData);
     });
 };
 
