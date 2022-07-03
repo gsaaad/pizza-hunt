@@ -13,9 +13,13 @@ const ReplySchema = new Schema(
 
     replyBody: {
       type: String,
+      require: true,
+      trim: true,
     },
     writtenBy: {
       type: String,
+      require: true,
+      trim: true,
     },
     // createdAt: {
     //   type: Date,

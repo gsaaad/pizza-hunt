@@ -55,7 +55,10 @@ const pizzaController = {
   //   PUT update pizza by id
   updatePizza({ params, body }, res) {
     // the third parameter, new, returns a new version of the document, and not the original
-    Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true })
+    Pizza.findOneAndUpdate({ _id: params.id }, body, {
+      new: true,
+      runValidators: true,
+    })
       .then((dbPizzaData) => {
         if (!dbPizzaData) {
           res
